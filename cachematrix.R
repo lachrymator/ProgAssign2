@@ -27,10 +27,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve(x) uses the list created by the above makeCacheMatrix() to identify whether
+## cacheSolve(cache) uses the cache list created by the above makeCacheMatrix() to identify whether
 ## the inverse of a matrix has already been cached
-## If it has, then return the cached value and return the cached value
-## If it hasn't, then calculate the inverse and store it for future use, and return the inverse
+## If it has, then return the cached value
+## If it hasn't, then calculate the inverse and store it within the list for future use
 ##
 ## Sample usage:
 ## cache <- makeCacheMatrix(x)  # creates the function list as above
@@ -46,7 +46,7 @@ cacheSolve <- function(x, ...) {
     return(inv)
   }
   data <- x$get()
-  inv <- solve(data, ...)
+  inv <- solve(data, ...)  #Here we are using the solve() function to actually calculate the inverse
   x$setinv(inv)
   inv
 }
