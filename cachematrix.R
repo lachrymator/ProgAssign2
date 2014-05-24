@@ -36,6 +36,8 @@ makeCacheMatrix <- function(x = matrix()) {
 ## cache <- makeCacheMatrix(x)  # creates the function list as above
 ## cacheSolve(cache)            # calculates the inverse for the first time, and store it in cache
 ## cacheSolve(cache)            # second iteration returns the cached inverted matrix
+## 
+## ASSUMPTION: Original x input matrix is a square invertible matrix
 
 
 
